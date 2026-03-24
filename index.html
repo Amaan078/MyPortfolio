@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>AMAAN.OS — v2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://unpkg.com/feather-icons"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Syne:wght@400;700;800&display=swap"
         rel="stylesheet">
@@ -312,6 +313,16 @@
             width: 18px
         }
 
+        .ddi-ic svg,
+        .di-ic svg,
+        .sri-ic svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 1.9;
+            color: inherit;
+            vertical-align: middle
+        }
+
         .ddi-sh {
             margin-left: auto;
             font-size: .56rem;
@@ -433,6 +444,11 @@
             position: relative;
             overflow: hidden;
             flex-shrink: 0
+        }
+
+        a.di {
+            color: inherit;
+            text-decoration: none
         }
 
         .di:hover {
@@ -1554,36 +1570,36 @@
         <div class="m-nav">
             <div class="mi" id="mf" onclick="menuClick(event, 'f')">File
                 <div class="mdd" id="ddf">
-                    <div class="ddi" onclick="ow('terminal')"><span class="ddi-ic">🖥️</span>New Terminal<span
+                    <div class="ddi" onclick="ow('terminal')"><span class="ddi-ic" data-feather="terminal"></span>New Terminal<span
                             class="ddi-sh">⌘T</span></div>
-                    <div class="ddi" onclick="ow('about')"><span class="ddi-ic">👤</span>Open About<span
+                    <div class="ddi" onclick="ow('about')"><span class="ddi-ic" data-feather="user"></span>Open About<span
                             class="ddi-sh">⌘1</span></div>
                     <div class="dds"></div>
-                    <div class="ddi" onclick="closeAll()"><span class="ddi-ic">✕</span>Close All</div>
+                    <div class="ddi" onclick="closeAll()"><span class="ddi-ic" data-feather="x"></span>Close All</div>
                 </div>
             </div>
             <div class="mi" id="mv" onclick="menuClick(event, 'v')">View
                 <div class="mdd" id="ddv">
-                    <div class="ddi" onclick="tileAll()"><span class="ddi-ic">⊞</span>Tile Windows</div>
-                    <div class="ddi" onclick="toggleDock()"><span class="ddi-ic">◧</span>Toggle Sidebar<span
+                    <div class="ddi" onclick="tileAll()"><span class="ddi-ic" data-feather="grid"></span>Tile Windows</div>
+                    <div class="ddi" onclick="toggleDock()"><span class="ddi-ic" data-feather="sidebar"></span>Toggle Sidebar<span
                             class="ddi-sh">⌘B</span></div>
                     <div class="dds"></div>
-                    <div class="ddi" onclick="toggleFlow()"><span class="ddi-ic">〰</span>Toggle Flow Lines</div>
+                    <div class="ddi" onclick="toggleFlow()"><span class="ddi-ic" data-feather="activity"></span>Toggle Flow Lines</div>
                 </div>
             </div>
             <div class="mi" id="mg" onclick="menuClick(event, 'g')">Go
                 <div class="mdd" id="ddg">
-                    <div class="ddi" onclick="ow('about')"><span class="ddi-ic">👤</span>About</div>
-                    <div class="ddi" onclick="ow('skills')"><span class="ddi-ic">⚡</span>Skills</div>
-                    <div class="ddi" onclick="ow('projects')"><span class="ddi-ic">🚀</span>Projects</div>
-                    <div class="ddi" onclick="ow('certs')"><span class="ddi-ic">🏅</span>Certifications</div>
-                    <div class="ddi" onclick="ow('contact')"><span class="ddi-ic">📡</span>Contact</div>
-                    <div class="ddi" onclick="ow('snake')"><span class="ddi-ic">🐍</span>Snake</div>
+                    <div class="ddi" onclick="ow('about')"><span class="ddi-ic" data-feather="user"></span>About</div>
+                    <div class="ddi" onclick="ow('skills')"><span class="ddi-ic" data-feather="zap"></span>Skills</div>
+                    <div class="ddi" onclick="ow('projects')"><span class="ddi-ic" data-feather="folder"></span>Projects</div>
+                    <div class="ddi" onclick="ow('certs')"><span class="ddi-ic" data-feather="award"></span>Certifications</div>
+                    <div class="ddi" onclick="ow('contact')"><span class="ddi-ic" data-feather="mail"></span>Contact</div>
+                    <div class="ddi" onclick="ow('snake')"><span class="ddi-ic" data-feather="code"></span>Snake</div>
                 </div>
             </div>
             <div class="mi" id="mh" onclick="menuClick(event, 'h')">Help
                 <div class="mdd" id="ddh">
-                    <div class="ddi" onclick="menuSpotlight(event)"><span class="ddi-ic">🔍</span>Spotlight<span
+                    <div class="ddi" onclick="menuSpotlight(event)"><span class="ddi-ic" data-feather="search"></span>Spotlight<span
                             class="ddi-sh">⌘K</span></div>
                 </div>
             </div>
@@ -1600,36 +1616,40 @@
     <div id="dock">
         <div id="dtog" onclick="toggleDock()">&#x2039;</div>
         <div class="dsl">Workspace</div>
-        <div class="di" id="di-terminal" onclick="ow('terminal')"><span class="di-ic">🖥️</span><span
+        <div class="di" id="di-terminal" onclick="ow('terminal')"><span class="di-ic" data-feather="terminal"></span><span
                 class="dil">Terminal</span>
             <div class="dtt">Terminal</div>
         </div>
         <div class="dsl" style="margin-top:6px">Portfolio</div>
-        <div class="di" id="di-about" onclick="ow('about')"><span class="di-ic">👤</span><span class="dil">About
+        <div class="di" id="di-about" onclick="ow('about')"><span class="di-ic" data-feather="user"></span><span class="dil">About
                 Me</span>
             <div class="dtt">About Me</div>
         </div>
-        <div class="di" id="di-skills" onclick="ow('skills')"><span class="di-ic">⚡</span><span
+        <div class="di" id="di-skills" onclick="ow('skills')"><span class="di-ic" data-feather="zap"></span><span
                 class="dil">Skills</span>
             <div class="dtt">Skills</div>
         </div>
-        <div class="di" id="di-projects" onclick="ow('projects')"><span class="di-ic">🚀</span><span
+        <div class="di" id="di-projects" onclick="ow('projects')"><span class="di-ic" data-feather="folder"></span><span
                 class="dil">Projects</span>
             <div class="dtt">Projects</div>
         </div>
-        <div class="di" id="di-certs" onclick="ow('certs')"><span class="di-ic">🏅</span><span class="dil">Certs</span>
+        <div class="di" id="di-certs" onclick="ow('certs')"><span class="di-ic" data-feather="award"></span><span class="dil">Certs</span>
             <div class="dtt">Certs</div>
         </div>
-        <div class="di" id="di-contact" onclick="ow('contact')"><span class="di-ic">📡</span><span
+        <div class="di" id="di-contact" onclick="ow('contact')"><span class="di-ic" data-feather="mail"></span><span
                 class="dil">Contact</span>
             <div class="dtt">Contact</div>
         </div>
+        <a class="di" id="di-cv" href="amaan-khan-cv.pdf" download="Amaan-Khan-CV.pdf"><span class="di-ic" data-feather="file-text"></span><span
+                class="dil">Download CV</span>
+            <div class="dtt">Download CV</div>
+        </a>
         <div class="dsl" style="margin-top:6px">Apps</div>
-        <div class="di" id="di-snake" onclick="ow('snake')"><span class="di-ic">🐍</span><span
+        <div class="di" id="di-snake" onclick="ow('snake')"><span class="di-ic" data-feather="code"></span><span
                 class="dil">Snake.py</span>
             <div class="dtt">Snake.py</div>
         </div>
-        <div class="di" id="di-search" onclick="menuSpotlight(event)"><span class="di-ic">&#128269;</span><span class="dil">Search</span>
+        <div class="di" id="di-search" onclick="menuSpotlight(event)"><span class="di-ic" data-feather="search"></span><span class="dil">Search</span>
             <div class="dtt">Search</div>
         </div>
     </div>
@@ -1684,6 +1704,9 @@
                             <a href="https://linkedin.com/in/amaan-khan099" target="_blank"
                                 style="font-size:.55rem;font-family:var(--mono);padding:2px 8px;border:1px solid rgba(34,211,238,.3);border-radius:100px;color:var(--cyan);text-decoration:none">LinkedIn
                                 ↗</a>
+                            <a href="amaan-khan-cv.pdf" download="Amaan-Khan-CV.pdf"
+                                style="font-size:.55rem;font-family:var(--mono);padding:2px 8px;border:1px solid rgba(52,211,153,.3);border-radius:100px;color:var(--green);text-decoration:none">Download CV
+                                ↓</a>
                         </div>
                     </div>
                 </div>
@@ -2079,7 +2102,7 @@
     <!-- SPOTLIGHT -->
     <div id="spot">
         <div class="spbox">
-            <div class="spin-row"><span class="spic">🔍</span><input id="spin" placeholder="Search AMAAN.OS…"
+            <div class="spin-row"><span class="spic" data-feather="search"></span><input id="spin" placeholder="Search AMAAN.OS…"
                     oninput="spsearch(this.value)" autocomplete="off"></div>
             <div class="spres" id="spres"></div>
         </div>
@@ -2094,6 +2117,19 @@
 
 
     <script>
+        function renderFeatherIcons(root) {
+            if (window.feather && typeof window.feather.replace === 'function') {
+                window.feather.replace({ 'stroke-width': 1.9 }, root || document);
+            }
+        }
+
+        function featherMarkup(name) {
+            if (window.feather && window.feather.icons && window.feather.icons[name]) {
+                return window.feather.icons[name].toSvg({ width: 16, height: 16, 'stroke-width': 1.9 });
+            }
+            return '';
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
 
             /* ── CURSOR ── */
@@ -2147,11 +2183,12 @@
 
             /* ── DESKTOP INIT ── */
             function initDesktop() {
-                initDrag();
-                initResize();
-                initTerminal();
-                initFlow();
-                startClock();
+            renderFeatherIcons();
+            initDrag();
+            initResize();
+            initTerminal();
+            initFlow();
+            startClock();
 
                 var W = mainW(), H = mainH();
 
@@ -2593,7 +2630,8 @@
                 { delay: 2000, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">skills</span><span style="color:var(--text-dim)">— My tech stack</span>'); } },
                 { delay: 2100, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">certs</span><span style="color:var(--text-dim)">— Certifications</span>'); } },
                 { delay: 2200, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">contact</span><span style="color:var(--text-dim)">— Get in touch</span>'); } },
-                { delay: 2300, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">help</span><span style="color:var(--text-dim)">— All commands</span>'); } },
+                { delay: 2300, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">cv</span><span style="color:var(--text-dim)">— Download my CV</span>'); } },
+                { delay: 2400, fn: function () { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">help</span><span style="color:var(--text-dim)">— All commands</span>'); } },
                 { delay: 2550, fn: function () { addOut(''); addOut('<span style="color:var(--green)">→ Type a command above or click the sidebar to explore.</span>'); addOut(''); } },
             ];
             seq.forEach(function (s) { setTimeout(s.fn, s.delay); });
@@ -2629,6 +2667,7 @@
                     addOut('<span style="color:var(--yellow)">Commands:</span>'); addOut('');
                     var cmds = [['about', 'Open About Me'], ['skills', 'Show skills'], ['projects', 'List projects'],
                     ['certs', 'Certifications'], ['contact', 'Contact info'], ['github', 'Open GitHub'],
+                    ['cv / resume', 'Download CV'],
                     ['achievements', 'Achievements'], ['snake', 'Launch snake'], ['tile', 'Tile windows'],
                     ['clear', 'Clear terminal'], ['whoami', 'Who am I?'], ['ls', 'List files'], ['matrix', '🤫']];
                     cmds.forEach(function (c) { addOut('  <span style="color:var(--accent2);display:inline-block;min-width:110px">' + c[0] + '</span><span style="color:var(--text-dim)">— ' + c[1] + '</span>'); });
@@ -2640,6 +2679,16 @@
                 projects: function () { ow('projects'); addOut('<span class="ok">→ Opened projects/</span>'); addOut(''); },
                 certs: function () { ow('certs'); addOut('<span class="ok">→ Opened certifications</span>'); addOut(''); },
                 contact: function () { ow('contact'); addOut('<span class="ok">→ Opened contact.sh</span>'); addOut(''); },
+                cv: function () {
+                    addOut('<span class="cy">→ Downloading Amaan-Khan-CV.pdf…</span>'); addOut('');
+                    var a = document.createElement('a');
+                    a.href = 'amaan-khan-cv.pdf';
+                    a.download = 'Amaan-Khan-CV.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                },
+                resume: function () { CMDS.cv(); },
                 github: function () { addOut('<span class="cy">→ Opening github.com/Amaan078…</span>'); addOut(''); setTimeout(function () { window.open('https://github.com/Amaan078', '_blank'); }, 400); },
                 achievements: function () {
                     addOut('<span style="color:var(--yellow)">Achievements:</span>'); addOut('');
@@ -2763,16 +2812,16 @@
 
         /* ── SPOTLIGHT ── */
         var spItems = [
-            { ic: '🖥️', t: 'Terminal', s: 'Open terminal', fn: function () { if (window.ow) window.ow('terminal'); } },
-            { ic: '👤', t: 'About Me', s: 'Who is Amaan', fn: function () { if (window.ow) window.ow('about'); } },
-            { ic: '⚡', t: 'Skills', s: 'Tech stack', fn: function () { if (window.ow) window.ow('skills'); } },
-            { ic: '🚀', t: 'Projects', s: 'IntelliTrade, VisualizeOS', fn: function () { if (window.ow) window.ow('projects'); } },
-            { ic: '🏅', t: 'Certifications', s: '4 verified', fn: function () { if (window.ow) window.ow('certs'); } },
-            { ic: '📡', t: 'Contact', s: 'Email, GitHub, LinkedIn', fn: function () { if (window.ow) window.ow('contact'); } },
-            { ic: '🐍', t: 'Snake.py', s: 'Mini game', fn: function () { if (window.ow) window.ow('snake'); } },
-            { ic: '⊞', t: 'Tile Windows', s: 'Arrange all', fn: function () { if (window.tileAll) window.tileAll(); } },
-            { ic: '◧', t: 'Toggle Sidebar', s: 'Show/hide dock', fn: function () { if (window.toggleDock) window.toggleDock(); } },
-            { ic: '〰', t: 'Toggle Flow Lines', s: 'Show/hide wires', fn: function () { if (window.toggleFlow) window.toggleFlow(); } },
+            { ic: 'terminal', t: 'Terminal', s: 'Open terminal', fn: function () { if (window.ow) window.ow('terminal'); } },
+            { ic: 'user', t: 'About Me', s: 'Who is Amaan', fn: function () { if (window.ow) window.ow('about'); } },
+            { ic: 'zap', t: 'Skills', s: 'Tech stack', fn: function () { if (window.ow) window.ow('skills'); } },
+            { ic: 'folder', t: 'Projects', s: 'IntelliTrade, VisualizeOS', fn: function () { if (window.ow) window.ow('projects'); } },
+            { ic: 'award', t: 'Certifications', s: '4 verified', fn: function () { if (window.ow) window.ow('certs'); } },
+            { ic: 'mail', t: 'Contact', s: 'Email, GitHub, LinkedIn', fn: function () { if (window.ow) window.ow('contact'); } },
+            { ic: 'code', t: 'Snake.py', s: 'Mini game', fn: function () { if (window.ow) window.ow('snake'); } },
+            { ic: 'grid', t: 'Tile Windows', s: 'Arrange all', fn: function () { if (window.tileAll) window.tileAll(); } },
+            { ic: 'sidebar', t: 'Toggle Sidebar', s: 'Show/hide dock', fn: function () { if (window.toggleDock) window.toggleDock(); } },
+            { ic: 'activity', t: 'Toggle Flow Lines', s: 'Show/hide wires', fn: function () { if (window.toggleFlow) window.toggleFlow(); } },
         ];
         window.openSpot = function () {
             if (window.closeMenus) closeMenus();
@@ -2793,10 +2842,11 @@
             filtered.forEach(function (item, i) {
                 var d = document.createElement('div');
                 d.className = 'sri' + (i === 0 ? ' sel' : '');
-                d.innerHTML = '<span class="sri-ic">' + item.ic + '</span><span class="sri-t">' + item.t + '</span><span class="sri-s">' + item.s + '</span>';
+                d.innerHTML = '<span class="sri-ic">' + featherMarkup(item.ic) + '</span><span class="sri-t">' + item.t + '</span><span class="sri-s">' + item.s + '</span>';
                 d.onclick = function () { item.fn(); closeSpot(); };
                 res.appendChild(d);
             });
+            renderFeatherIcons(res);
         };
         document.getElementById('spot').addEventListener('click', function (e) { if (e.target === document.getElementById('spot')) closeSpot(); });
         document.getElementById('di-search').addEventListener('click', function (e) { e.stopPropagation(); openSpot(); });
